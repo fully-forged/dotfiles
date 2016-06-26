@@ -26,3 +26,4 @@ brew install \
 stow nvim
 stow bash
 stow tmux
+stow input
