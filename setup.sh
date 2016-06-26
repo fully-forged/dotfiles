@@ -24,3 +24,5 @@ brew install \
 
 # Symlink dotfiles with GNU Stow
 stow nvim
+stow bash
+stow tmux
