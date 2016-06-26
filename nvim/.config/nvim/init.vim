@@ -1,68 +1,56 @@
-" NeoBundle {{{
-if has('vim_starting')
-  " Required:
-  set runtimepath+=/Users/cloud/.config/nvim/bundle/neobundle.vim/
-endif
+" Plug {{{
+call plug#begin('~/.config/nvim/bundle')
 
-" Required:
-call neobundle#begin(expand('/Users/cloud/.config/nvim/bundle'))
+Plug 'tpope/vim-fugitive'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/seoul256.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tmhedberg/matchit'
+Plug 'vim-scripts/tComment'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'ervandew/supertab'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'mattn/emmet-vim'
+Plug 'vim-ruby/vim-ruby'
+Plug 'elixir-lang/vim-elixir'
+Plug 'jimenezrick/vimerl'
+Plug 'JulesWang/css.vim'
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'wolfy87/vim-enmasse'
+Plug 'ElmCast/elm-vim'
+Plug 'benmills/vimux'
+Plug 'janko-m/vim-test'
+Plug 'embear/vim-localvimrc'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'geoffharcourt/one-dark.vim'
+Plug 'godlygeek/tabular'
+Plug 'airblade/vim-gitgutter'
+Plug 'rking/ag.vim'
+Plug 'dag/vim2hs'
+Plug 'bitc/vim-hdevtools'
+Plug 'slashmili/alchemist.vim'
+Plug 'powerman/vim-plugin-AnsiEsc'
+Plug 'morhetz/gruvbox'
+Plug 'lfex/vim-lfe'
+Plug 'edkolev/erlang-motions.vim'
+Plug 'dracula/vim'
 
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" Add or remove your Bundles here:
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'junegunn/seoul256.vim'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'tmhedberg/matchit'
-NeoBundle 'vim-scripts/tComment'
-NeoBundle 'tpope/vim-abolish'
-NeoBundle 'tpope/vim-bundler'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'tpope/vim-rake'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'ervandew/supertab'
-NeoBundle 'ntpeters/vim-better-whitespace'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'elixir-lang/vim-elixir'
-NeoBundle 'jimenezrick/vimerl'
-NeoBundle 'JulesWang/css.vim'
-NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'nelstrom/vim-textobj-rubyblock'
-NeoBundle 'wolfy87/vim-enmasse'
-NeoBundle 'ElmCast/elm-vim'
-NeoBundle 'benmills/vimux'
-NeoBundle 'janko-m/vim-test'
-NeoBundle 'embear/vim-localvimrc'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'geoffharcourt/one-dark.vim'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'dag/vim2hs'
-NeoBundle 'bitc/vim-hdevtools'
-NeoBundle 'slashmili/alchemist.vim'
-NeoBundle 'powerman/vim-plugin-AnsiEsc'
-NeoBundle 'morhetz/gruvbox'
-NeoBundle 'lfex/vim-lfe'
-NeoBundle 'edkolev/erlang-motions.vim'
-NeoBundle 'dracula/vim'
-
-" Required:
-call neobundle#end()
+call plug#end()
 
 " Required:
 filetype plugin indent on
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
-NeoBundleCheck
+" PlugInstall
 " }}}
 " {{{ Defaults
 set nobackup
