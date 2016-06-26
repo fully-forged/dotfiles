@@ -27,3 +27,4 @@ stow nvim
 stow bash
 stow tmux
 stow input
+stow git
