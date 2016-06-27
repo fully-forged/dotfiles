@@ -6,6 +6,9 @@
 # Setup temporary PATH
 export PATH=/usr/local/bin/:$PATH
 
+# Install asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+
 # Install dev tools
 brew install \
   autojump \
