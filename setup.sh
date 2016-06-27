@@ -1,6 +1,9 @@
 # Setup homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+# Setup temporary PATH
+export PATH=/usr/local/bin/:$PATH
+
 # Install dev tools
 brew install \
   autojump \
