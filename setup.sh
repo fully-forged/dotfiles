@@ -9,6 +9,12 @@ export PATH=/usr/local/bin/:$PATH
 # Install asdf
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 
+source ~/.asdf/asdf.sh
+
+asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+
 # Install dev tools
 brew install \
   autojump \
