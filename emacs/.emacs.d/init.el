@@ -37,7 +37,13 @@
 ;; Evil setup
 
 (require 'evil)
+(require 'evil-leader)
+
 (evil-mode 1)
+(global-evil-leader-mode)
+
+(evil-leader/set-key
+  "e" 'eval-last-sexp)
 
 ;; Visual
 (global-linum-mode t)
