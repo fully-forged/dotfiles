@@ -8,10 +8,13 @@
 (add-to-list 'package-archives '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/"))
 
 (defvar my-packages '(better-defaults
+                      exec-path-from-shell
+                      erlang
                       helm
                       evil
                       evil-leader
                       evil-surround
+                      flycheck
                       gruvbox-theme))
 
 (defun my-missing-packages ()
@@ -37,6 +40,10 @@
 
 (ensure-my-packages)
 
+;; Fix PATH
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
+
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
@@ -53,6 +60,14 @@
 
 (require 'helm-config)
 (helm-mode t)
+
+;; Flycheck
+(global-flycheck-mode)
+
+;; Erlang
+(require 'erlang-start)
+
+;; Shortcuts
 
 (evil-define-key 'normal global-map
   "\C-p" 'helm-mini
