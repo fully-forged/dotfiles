@@ -65,6 +65,7 @@
 (global-flycheck-mode)
 
 ;; Erlang
+(setq erlang-indent-level 2)
 (require 'erlang-start)
 
 ;; Shortcuts
