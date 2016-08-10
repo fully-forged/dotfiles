@@ -6,6 +6,7 @@
 (add-to-list 'package-archives '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/"))
 
 (defvar my-packages '(better-defaults
+                      helm
                       evil
                       evil-leader
                       evil-surround
@@ -34,6 +35,10 @@
 
 (ensure-my-packages)
 
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+
 ;; Evil setup
 
 (require 'evil)
@@ -42,13 +47,23 @@
 (evil-mode 1)
 (global-evil-leader-mode)
 
+;; Helm setup
+
+(require 'helm-config)
+(helm-mode t)
+
+(evil-define-key 'normal global-map
+  "\C-p" 'helm-mini
+  "\M-x" 'helm-M-x)
+
 (define-key evil-motion-state-map (kbd "SPC") 'evil-ex)
 (define-key evil-normal-state-map (kbd "[ SPC") 'evil-open-above)
 (define-key evil-normal-state-map (kbd "] SPC") 'evil-open-below)
 (evil-leader/set-leader ",")
 
 (evil-leader/set-key
-  "e" 'eval-last-sexp)
+  "e" 'eval-last-sexp
+  "f" 'helm-find-files)
 
 ;; Visual
 
