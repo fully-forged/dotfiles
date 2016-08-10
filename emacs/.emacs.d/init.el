@@ -5,7 +5,10 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/"))
 
-(defvar my-packages '(better-defaults))
+(defvar my-packages '(better-defaults
+                      evil
+                      evil-leader
+                      evil-surround))
 
 (defun my-missing-packages ()
   (let (missing-packages)
@@ -29,3 +32,8 @@
           (delete-window compile-window))))))
 
 (ensure-my-packages)
+
+;; Evil setup
+
+(require 'evil)
+(evil-mode 1)
