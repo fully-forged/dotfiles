@@ -42,9 +42,13 @@
 (evil-mode 1)
 (global-evil-leader-mode)
 
+(define-key evil-motion-state-map (kbd "SPC") 'evil-ex)
+(evil-leader/set-leader ",")
+
 (evil-leader/set-key
   "e" 'eval-last-sexp)
 
 ;; Visual
+
 (global-linum-mode t)
 (load-theme 'gruvbox t)
