@@ -1,3 +1,5 @@
+(setq tramp-ssh-controlmaster-options "")
+
 (require 'package)
 (package-initialize)
 
