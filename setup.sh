@@ -37,4 +37,4 @@ brew install \
   tree
 
 # Symlink dotfiles with GNU Stow
-stow nvim bash tmux input git bin
+stow nvim bash tmux input git bin emacs
