@@ -40,5 +40,5 @@
 (evil-mode 1)
 
 ;; Visual
-
+(global-linum-mode t)
 (load-theme 'gruvbox t)
