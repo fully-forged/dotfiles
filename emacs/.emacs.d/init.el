@@ -8,7 +8,8 @@
 (defvar my-packages '(better-defaults
                       evil
                       evil-leader
-                      evil-surround))
+                      evil-surround
+                      gruvbox-theme))
 
 (defun my-missing-packages ()
   (let (missing-packages)
@@ -37,3 +38,7 @@
 
 (require 'evil)
 (evil-mode 1)
+
+;; Visual
+
+(load-theme 'gruvbox t)
