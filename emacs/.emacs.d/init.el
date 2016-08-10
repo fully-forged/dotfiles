@@ -43,6 +43,8 @@
 (global-evil-leader-mode)
 
 (define-key evil-motion-state-map (kbd "SPC") 'evil-ex)
+(define-key evil-normal-state-map (kbd "[ SPC") 'evil-open-above)
+(define-key evil-normal-state-map (kbd "] SPC") 'evil-open-below)
 (evil-leader/set-leader ",")
 
 (evil-leader/set-key
