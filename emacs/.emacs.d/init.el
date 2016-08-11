@@ -21,7 +21,7 @@
                       powerline-evil
                       projectile
                       helm-projectile
-                      gruvbox-theme))
+                      monokai-theme))
 
 (defun my-missing-packages ()
   (let (missing-packages)
@@ -119,7 +119,7 @@
 (defun init-visual ()
   (global-linum-mode t)
 
-  (load-theme 'gruvbox t)
+  (load-theme 'monokai t)
   (set-face-attribute 'default nil :font "Monaco-11")
 
   (fringe-mode '(20 . 0))
