@@ -16,6 +16,8 @@
                       evil-leader
                       evil-surround
                       flycheck
+                      projectile
+                      helm-projectile
                       gruvbox-theme))
 
 (defun my-missing-packages ()
@@ -61,6 +63,7 @@
 
 (require 'helm-config)
 (helm-mode t)
+(require 'helm-projectile)
 
 ;; Flycheck
 (global-flycheck-mode)
@@ -86,7 +89,7 @@
 
 (evil-leader/set-key
   "e" 'eval-last-sexp
-  "f" 'helm-find-files)
+  "f" 'helm-projectile-find-file)
 
 ;; Visual
 
