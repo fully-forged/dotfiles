@@ -12,6 +12,7 @@
                       company
                       alchemist
                       elm-mode
+                      erlang
                       helm
                       evil
                       evil-leader
