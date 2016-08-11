@@ -122,7 +122,8 @@
   (load-theme 'monokai t)
   (set-face-attribute 'default nil :font "Monaco-11")
 
-  (fringe-mode '(20 . 0))
+  (when (memq window-system '(mac ns))
+    (fringe-mode '(20 . 0)))
 
   (if (< (length command-line-args) 2)
       (setq initial-buffer-choice (car (helm-recentf)))))
