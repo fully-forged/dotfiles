@@ -93,5 +93,15 @@
 
 ;; Visual
 
-(global-linum-mode t)
-(load-theme 'gruvbox t)
+(defun init-visual ()
+  (global-linum-mode t)
+
+  (load-theme 'gruvbox t)
+  (set-face-attribute 'default nil :font "Monaco-11")
+
+  (fringe-mode '(20 . 0))
+
+  (if (< (length command-line-args) 2) 
+      (setq initial-buffer-choice (car (helm-recentf)))))
+
+(init-visual)
