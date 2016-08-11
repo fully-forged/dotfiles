@@ -10,6 +10,7 @@
 (defvar my-packages '(better-defaults
                       exec-path-from-shell
                       erlang
+                      elixir-mode
                       elm-mode
                       helm
                       evil
