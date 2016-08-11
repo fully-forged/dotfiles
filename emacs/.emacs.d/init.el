@@ -117,6 +117,9 @@
   "ci" 'elm-compile-clean-imports
   "si" 'elm-sort-imports)
 
+;; Projectile
+
+(setq projectile-switch-project-action 'neotree-projectile-action)
 (add-hook 'neotree-mode-hook
           (lambda ()
             (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
