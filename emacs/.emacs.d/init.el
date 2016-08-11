@@ -9,8 +9,8 @@
 
 (defvar my-packages '(better-defaults
                       exec-path-from-shell
-                      erlang
-                      elixir-mode
+                      company
+                      alchemist
                       elm-mode
                       helm
                       evil
@@ -66,8 +66,10 @@
 (require 'whitespace)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;; Helm setup
+;; Company
+(add-hook 'after-init-hook 'global-company-mode)
 
+;; Helm setup
 (require 'helm-config)
 (helm-mode t)
 (require 'helm-projectile)
@@ -88,6 +90,9 @@
 (setq elm-format-on-save t)
 (setq elm-sort-imports-on-save t)
 (setq elm-tags-on-save t)
+
+;; Elixir
+(require 'alchemist)
 
 ;; Shortcuts
 
