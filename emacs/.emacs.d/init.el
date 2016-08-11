@@ -86,6 +86,7 @@
 
 ;; Elm
 (setq elm-format-on-save t)
+(setq elm-sort-imports-on-save t)
 (setq elm-tags-on-save t)
 
 ;; Shortcuts
@@ -102,6 +103,11 @@
 (evil-leader/set-key
   "e" 'eval-last-sexp
   "f" 'helm-projectile-find-file)
+
+(evil-leader/set-key-for-mode 'elm-mode
+  "t" 'elm-compile-add-annotations
+  "ci" 'elm-compile-clean-imports
+  "si" 'elm-sort-imports)
 
 ;; Visual
 
