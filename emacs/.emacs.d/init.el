@@ -10,6 +10,7 @@
 (defvar my-packages '(better-defaults
                       exec-path-from-shell
                       erlang
+                      elm-mode
                       helm
                       evil
                       evil-leader
@@ -67,6 +68,10 @@
 ;; Erlang
 (setq erlang-indent-level 2)
 (require 'erlang-start)
+
+;; Elm
+(setq elm-format-on-save t)
+(setq elm-tags-on-save t)
 
 ;; Shortcuts
 
