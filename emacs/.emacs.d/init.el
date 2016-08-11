@@ -17,6 +17,8 @@
                       evil-leader
                       evil-surround
                       flycheck
+                      powerline
+                      powerline-evil
                       projectile
                       helm-projectile
                       gruvbox-theme))
@@ -68,6 +70,11 @@
 
 ;; Flycheck
 (global-flycheck-mode)
+
+;; Powerline
+(require 'powerline)
+(require 'powerline-evil)
+(powerline-evil-vim-color-theme)
 
 ;; Erlang
 (setq erlang-indent-level 2)
