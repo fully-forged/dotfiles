@@ -62,6 +62,10 @@
 (evil-mode 1)
 (global-evil-leader-mode)
 
+;; General
+(require 'whitespace)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;; Helm setup
 
 (require 'helm-config)
@@ -109,7 +113,7 @@
 
   (fringe-mode '(20 . 0))
 
-  (if (< (length command-line-args) 2) 
+  (if (< (length command-line-args) 2)
       (setq initial-buffer-choice (car (helm-recentf)))))
 
 (init-visual)
