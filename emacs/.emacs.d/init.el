@@ -18,6 +18,7 @@
                       evil-leader
                       evil-surround
                       flycheck
+                      neotree
                       powerline
                       powerline-evil
                       projectile
@@ -108,12 +109,20 @@
 
 (evil-leader/set-key
   "e" 'eval-last-sexp
-  "f" 'helm-projectile-find-file)
+  "3" 'neotree-toggle
+  "1" 'helm-projectile-find-file)
 
 (evil-leader/set-key-for-mode 'elm-mode
   "t" 'elm-compile-add-annotations
   "ci" 'elm-compile-clean-imports
   "si" 'elm-sort-imports)
+
+(add-hook 'neotree-mode-hook
+          (lambda ()
+            (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
+            (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
+            (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
+            (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
 
 ;; Visual
 
