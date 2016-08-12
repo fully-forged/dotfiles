@@ -117,6 +117,9 @@
   "ci" 'elm-compile-clean-imports
   "si" 'elm-sort-imports)
 
+(evil-leader/set-key-for-mode 'erlang-mode
+  "a" 'erlang-align-arrows)
+
 ;; Projectile
 
 (setq projectile-switch-project-action 'neotree-projectile-action)
