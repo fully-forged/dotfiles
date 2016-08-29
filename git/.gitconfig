@@ -4,7 +4,7 @@
   pretty = %Cblue%h%Creset %Cgreen[%ar]%Creset (%an) %s
 [user]
   name = Claudio Ortolina
-	email = claudio@fullyforged.com
+	email = claudio.ortolina@erlang-solutions.com
 [mergetool]
   keepBackup = true
 [color]
@@ -13,7 +13,7 @@
   diff = auto
   status = auto
 [core]
-  excludesfile = /Users/cloud/.gitignore_global
+  excludesfile = ~/.gitignore_global
 [alias]
   co = checkout
   pick = cherry-pick
