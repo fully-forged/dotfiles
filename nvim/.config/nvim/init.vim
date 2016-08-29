@@ -8,10 +8,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'tmhedberg/matchit'
 Plug 'vim-scripts/tComment'
 Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-rake'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'ervandew/supertab'
@@ -19,7 +17,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'mattn/emmet-vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'elixir-lang/vim-elixir'
-Plug 'jimenezrick/vimerl'
 Plug 'JulesWang/css.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
@@ -32,16 +29,18 @@ Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'geoffharcourt/one-dark.vim'
 Plug 'godlygeek/tabular'
-Plug 'airblade/vim-gitgutter'
 Plug 'rking/ag.vim'
-Plug 'dag/vim2hs'
-Plug 'bitc/vim-hdevtools'
 Plug 'slashmili/alchemist.vim'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'morhetz/gruvbox'
 Plug 'lfex/vim-lfe'
-Plug 'edkolev/erlang-motions.vim'
 Plug 'dracula/vim'
+Plug 'vim-erlang/vim-erlang-runtime'
+Plug 'vim-erlang/vim-erlang-compiler'
+Plug 'vim-erlang/vim-erlang-omnicomplete'
+Plug 'vim-erlang/vim-erlang-tags'
+Plug 'vim-erlang/vim-erlang-skeletons'
+Plug 'edkolev/erlang-motions.vim'
 
 call plug#end()
 
@@ -267,6 +266,7 @@ nmap <silent> <leader>l :TestLast<CR>
 vnoremap . :norm.<CR>
 " }}}
 " Autocompletion {{{
+let g:SuperTabDefaultCompletionType = "context"
 " }}}
 " Syntax - General {{{
 " Fake '|' as text object
