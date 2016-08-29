@@ -72,9 +72,7 @@
 (add-hook 'after-init-hook 'global-company-mode)
 
 ;; Helm setup
-(require 'helm-config)
 (helm-mode t)
-(require 'helm-projectile)
 
 ;; Flycheck
 (global-flycheck-mode)
@@ -110,7 +108,8 @@
 (evil-leader/set-key
   "e" 'eval-last-sexp
   "3" 'neotree-toggle
-  "1" 'helm-projectile-find-file)
+  "1" 'helm-projectile-find-file
+  "sp" 'helm-projectile-switch-project)
 
 (evil-leader/set-key-for-mode 'elm-mode
   "t" 'elm-compile-add-annotations
@@ -122,7 +121,9 @@
 
 ;; Projectile
 
-(setq projectile-switch-project-action 'neotree-projectile-action)
+(projectile-global-mode)
+(helm-projectile-on)
+
 (add-hook 'neotree-mode-hook
           (lambda ()
             (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
