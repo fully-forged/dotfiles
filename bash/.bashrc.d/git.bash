@@ -1,5 +1,6 @@
 alias s='git status --short'
 alias l='git lg'
+alias reflog='git reflog --pretty=raw | tig --pretty=raw'
 
 fbr() {
   local branches branch
