@@ -357,4 +357,7 @@ let g:NERDTreeChDirMode=2
 " }}}
 " NeoMake {{{
 " }}}
+" Vim-Test {{{
+let test#filename_modifier = ':p'
+" }}}
 " vim:foldmethod=marker:foldlevel=0
