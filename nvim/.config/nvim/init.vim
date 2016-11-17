@@ -1,6 +1,7 @@
 " Plug {{{
 call plug#begin('~/.config/nvim/bundle')
 
+Plug 'shougo/deoplete.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/seoul256.vim'
@@ -266,6 +267,7 @@ nmap <silent> <leader>l :TestLast<CR>
 vnoremap . :norm.<CR>
 " }}}
 " Autocompletion {{{
+let g:deoplete#enable_at_startup = 1
 let g:SuperTabDefaultCompletionType = "context"
 " }}}
 " Syntax - General {{{
