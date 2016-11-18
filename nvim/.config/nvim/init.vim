@@ -297,6 +297,9 @@ nnoremap va/ F/v,
 " Fixes syntax highlight for Ruby files
 au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,Vagrantfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 " }}}
+" Syntax - Erlang/Elixir {{{
+let g:alchemist#elixir_erlang_src = "~/oss"
+" }}}
 " Tmux {{{
 "Key fixes for Tmux
 map [A <C-Up>
@@ -325,10 +328,10 @@ if exists('$TMUX')
   map <Leader>rs :VimuxInterruptRunner<CR>
 
   " If text is selected, save it in the v buffer and send that buffer it to tmux
-  vmap <Leader>r "vy :call VimuxRunCommand(@v)<CR>
+  vmap <Leader>r "vy :call VimuxRunCommand(@v)
 
   " Select current paragraph and send it to tmux
-  nmap <Leader>r vip<Leader>r<CR>
+  nmap <Leader>r vip<Leader>r
 endif
 "
 " }}}
