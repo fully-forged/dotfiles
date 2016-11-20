@@ -47,6 +47,9 @@ eval "$(direnv hook $0)"
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
+. /usr/local/opt/fzf/shell/completion.bash
+. /usr/local/opt/fzf/shell/key-bindings.bash
+
 export PATH=$HOME/bin:$PATH
 
 alias vim=nvim

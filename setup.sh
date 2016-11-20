@@ -22,6 +22,7 @@ brew install \
   bash-completion \
   ctags \
   direnv \
+  fzf \
   git \
   libsass \
   neovim/neovim/neovim \
