@@ -45,6 +45,7 @@ Plug 'edkolev/erlang-motions.vim'
 Plug 'dag/vim2hs'
 Plug 'bitc/vim-hdevtools'
 Plug 'vimwiki/vimwiki'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
