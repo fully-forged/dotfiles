@@ -42,6 +42,8 @@ Plug 'vim-erlang/vim-erlang-omnicomplete'
 Plug 'vim-erlang/vim-erlang-tags'
 Plug 'vim-erlang/vim-erlang-skeletons'
 Plug 'edkolev/erlang-motions.vim'
+Plug 'dag/vim2hs'
+Plug 'bitc/vim-hdevtools'
 Plug 'vimwiki/vimwiki'
 
 call plug#end()
