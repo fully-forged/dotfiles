@@ -44,6 +44,7 @@ Plug 'vim-erlang/vim-erlang-skeletons'
 Plug 'edkolev/erlang-motions.vim'
 Plug 'dag/vim2hs'
 Plug 'bitc/vim-hdevtools'
+Plug 'neomake/neomake'
 Plug 'vimwiki/vimwiki'
 Plug 'rust-lang/rust.vim'
 
