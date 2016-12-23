@@ -366,6 +366,7 @@ let g:NERDTreeChDirMode=2
 " }}}
 " Vim-Test {{{
 let test#filename_modifier = ':p'
+let test#runners = {'erlang': ['CommonTest']}
 " }}}
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'path_html': '~/public_html/'}]
 " vim:foldmethod=marker:foldlevel=0
