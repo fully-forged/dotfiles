@@ -43,6 +43,7 @@ Plug 'vim-erlang/vim-erlang-omnicomplete'
 Plug 'vim-erlang/vim-erlang-tags'
 Plug 'vim-erlang/vim-erlang-skeletons'
 Plug 'edkolev/erlang-motions.vim'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
@@ -363,4 +364,5 @@ let g:NERDTreeChDirMode=2
 " Vim-Test {{{
 let test#filename_modifier = ':p'
 " }}}
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'path_html': '~/public_html/'}]
 " vim:foldmethod=marker:foldlevel=0
