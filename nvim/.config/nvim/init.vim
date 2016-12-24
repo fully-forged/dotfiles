@@ -363,10 +363,20 @@ let NERDTreeShowBookmarks=0
 let g:NERDTreeChDirMode=2
 " }}}
 " NeoMake {{{
+
+" Elm support
+let g:neomake_elm_elm_lint_maker = { 'exe': 'elm-lint', 'errorformat': '%f:%l:%c [%t] %m' }
+let g:neomake_elm_enabled_makers = ['elm_lint']
+" use neomake to build different files
+augroup neomake_neomake_build
+  autocmd! BufRead,BufWritePost *.elm Neomake elm_lint
+augroup end
 " }}}
 " Vim-Test {{{
 let test#filename_modifier = ':p'
 let test#runners = {'erlang': ['CommonTest']}
 " }}}
+" VimWiki {{{
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'path_html': '~/public_html/'}]
+" }}}
 " vim:foldmethod=marker:foldlevel=0
