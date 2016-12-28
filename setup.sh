@@ -36,10 +36,12 @@ brew install \
   the_silver_searcher \
   tmux \
   tree \
-  python
+  python \
+  python3
 
 # Install Neovim Python support
 pip install --user --upgrade neovim
+pip3 install --user --upgrade neovim
 
 # Symlink dotfiles with GNU Stow
 stow nvim bash tmux input git bin emacs
