@@ -5,7 +5,7 @@ Plug 'shougo/deoplete.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/seoul256.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tmhedberg/matchit'
 Plug 'vim-scripts/tComment'
 Plug 'tpope/vim-abolish'
@@ -21,7 +21,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'elixir-lang/vim-elixir'
 Plug 'JulesWang/css.vim'
 Plug 'kana/vim-textobj-user'
-Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'}
 Plug 'wolfy87/vim-enmasse'
 Plug 'ElmCast/elm-vim'
 Plug 'benmills/vimux'
@@ -32,21 +32,21 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'geoffharcourt/one-dark.vim'
 Plug 'godlygeek/tabular'
 Plug 'rking/ag.vim'
-Plug 'slashmili/alchemist.vim'
+Plug 'slashmili/alchemist.vim', { 'for': 'elixir'}
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'morhetz/gruvbox'
 Plug 'dracula/vim'
-Plug 'vim-erlang/vim-erlang-runtime'
-Plug 'vim-erlang/vim-erlang-compiler'
-Plug 'vim-erlang/vim-erlang-omnicomplete'
-Plug 'vim-erlang/vim-erlang-tags'
-Plug 'vim-erlang/vim-erlang-skeletons'
-Plug 'edkolev/erlang-motions.vim'
-Plug 'dag/vim2hs'
-Plug 'bitc/vim-hdevtools'
+Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang'}
+Plug 'vim-erlang/vim-erlang-compiler', { 'for': 'erlang'}
+Plug 'vim-erlang/vim-erlang-omnicomplete', { 'for': 'erlang'}
+Plug 'vim-erlang/vim-erlang-tags', { 'for': 'erlang'}
+Plug 'vim-erlang/vim-erlang-skeletons', { 'for': 'erlang'}
+Plug 'edkolev/erlang-motions.vim', { 'for': 'erlang'}
+Plug 'dag/vim2hs', { 'for': 'haskell'}
+Plug 'bitc/vim-hdevtools', { 'for': 'haskell'}
 Plug 'neomake/neomake'
 Plug 'vimwiki/vimwiki'
-Plug 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim', { 'for': 'rust'}
 
 call plug#end()
 
