@@ -177,6 +177,9 @@ au FocusLost * :silent! wall
 autocmd FileType gitcommit setlocal spell textwidth=72
 autocmd BufRead,BufNewFile {*.md,*.mkd} setlocal spell
 
+" Soft wrap when writing docs
+autocmd BufRead,BufNewFile {*.txt,*.tex,*.md} set wrap linebreak nolist textwidth=0 wrapmargin=0
+
 " Format elm code on save
 autocmd BufWritePost *.elm silent execute "!elm-format --yes %" | edit! | set filetype=elm | redraw!
 
