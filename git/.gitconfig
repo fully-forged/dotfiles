@@ -27,7 +27,7 @@
   d = diff --color-words
   tutorial = log --pretty=format:'%Cgreen%h - %Cred%s%Creset%n%b'
 [diff]
-	tool = delta
+	tool = vimdiff
 [merge]
   tool = vimdiff
 [difftool]
@@ -39,5 +39,3 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
-[difftool "delta"]
-	cmd = delta \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
