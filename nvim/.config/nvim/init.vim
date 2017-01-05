@@ -273,6 +273,9 @@ nmap <silent> <leader>l :TestLast<CR>
 
 "enable . in visual mode
 vnoremap . :norm.<CR>
+
+" Center banner around word
+nnoremap <leader>b :center 80<cr>hhv0r#A<space><esc>40A#<esc>d80<bar>YppVr#kk.
 " }}}
 " Autocompletion {{{
 let g:deoplete#enable_at_startup = 1
