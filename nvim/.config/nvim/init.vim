@@ -46,6 +46,7 @@ Plug 'dag/vim2hs', { 'for': 'haskell'}
 Plug 'bitc/vim-hdevtools', { 'for': 'haskell'}
 Plug 'neomake/neomake'
 Plug 'vimwiki/vimwiki'
+Plug 'jreybert/vimagit'
 Plug 'rust-lang/rust.vim', { 'for': 'rust'}
 
 call plug#end()
@@ -102,6 +103,7 @@ set lazyredraw
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
+
 " }}}
 " Airline {{{
 let g:rehash256 = 1
@@ -271,6 +273,9 @@ nmap <silent> <leader>t :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 
+" Location navigation
+nmap <silent> <leader>n :lnext<cr>
+
 "enable . in visual mode
 vnoremap . :norm.<CR>
 
@@ -281,6 +286,7 @@ nnoremap <leader>b :center 80<cr>hhv0r#A<space><esc>40A#<esc>d80<bar>YppVr#kk.
 nmap <leader>e :EnMasse<CR>
 " }}}
 " Autocompletion {{{
+set completeopt=longest,menuone
 let g:deoplete#enable_at_startup = 1
 let g:SuperTabDefaultCompletionType = "context"
 " }}}
@@ -380,6 +386,16 @@ let g:neomake_elm_enabled_makers = ['elm_lint']
 augroup neomake_neomake_build
   autocmd! BufRead,BufWritePost *.elm Neomake elm_lint
 augroup end
+
+" (Assuming settings like the following)
+let g:deoplete#omni#functions = {}
+let g:deoplete#sources = {}
+let g:deoplete#sources._ = ['file']
+let g:deoplete#omni#input_patterns = {}
+
+let g:deoplete#omni#functions.elm = ['elm#Complete']
+let g:deoplete#omni#input_patterns.elm = '[^ \t]+'
+let g:deoplete#sources.elm = ['omni'] + g:deoplete#sources._
 " }}}
 " Vim-Test {{{
 let test#filename_modifier = ':p'
