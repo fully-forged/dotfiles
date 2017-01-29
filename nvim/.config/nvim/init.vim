@@ -385,6 +385,7 @@ let g:neomake_elm_enabled_makers = ['elm_lint']
 " use neomake to build different files
 augroup neomake_neomake_build
   autocmd! BufRead,BufWritePost *.elm Neomake elm_lint
+  autocmd! BufRead,BufWritePost *.c Neomake
 augroup end
 
 " (Assuming settings like the following)
