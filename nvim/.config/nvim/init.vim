@@ -35,9 +35,11 @@ Plug 'rking/ag.vim'
 Plug 'slashmili/alchemist.vim', { 'for': 'elixir'}
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
+Plug 'Soares/base16.nvim'
 Plug 'dracula/vim'
+Plug 'nonsense/tomorrow-night-vim-theme'
 Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang'}
-Plug 'vim-erlang/vim-erlang-compiler', { 'for': 'erlang'}
 Plug 'vim-erlang/vim-erlang-omnicomplete', { 'for': 'erlang'}
 Plug 'vim-erlang/vim-erlang-tags', { 'for': 'erlang'}
 Plug 'vim-erlang/vim-erlang-skeletons', { 'for': 'erlang'}
@@ -48,6 +50,7 @@ Plug 'neomake/neomake'
 Plug 'vimwiki/vimwiki'
 Plug 'jreybert/vimagit'
 Plug 'rust-lang/rust.vim', { 'for': 'rust'}
+Plug 'lfe-support/vim-lfe', { 'for': 'lfe'}
 
 call plug#end()
 
@@ -88,23 +91,6 @@ set spellfile=$HOME/.vim/spell/en.utf-8.add
 " When spellcheck is enabled, autocomplete from dictionary
 set complete+=kspell
 " }}}
-" {{{ Visual
-" Change cursor for insert mode
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
-" Use true colors
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-set background=dark
-colorscheme gruvbox
-
-" Don't redraw unnecessarily
-set lazyredraw
-
-" Display extra whitespace
-set list listchars=tab:»·,trail:·
-
-" }}}
 " Airline {{{
 let g:rehash256 = 1
 
@@ -127,7 +113,7 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='gruvbox'
+let g:airline_theme='tomorrow'
 "}}}
 " {{{ Mouse, OS integration
 " Fix backspace
@@ -382,10 +368,20 @@ let g:NERDTreeChDirMode=2
 " Elm support
 let g:neomake_elm_elm_lint_maker = { 'exe': 'elm-lint', 'errorformat': '%f:%l:%c [%t] %m' }
 let g:neomake_elm_enabled_makers = ['elm_lint']
+
+function! neomake#makers#ft#erlang#erlc()
+    return {
+        \ 'args': ['+basic_validation'],
+        \ 'errorformat':
+            \ '%W%f:%l: Warning: %m,' .
+            \ '%E%f:%l: %m'
+        \ }
+endfunction
 " use neomake to build different files
 augroup neomake_neomake_build
   autocmd! BufRead,BufWritePost *.elm Neomake elm_lint
   autocmd! BufRead,BufWritePost *.c Neomake
+  autocmd! BufRead,BufWritePost *.erl Neomake
 augroup end
 
 " (Assuming settings like the following)
@@ -404,5 +400,24 @@ let test#runners = {'erlang': ['CommonTest']}
 " }}}
 " VimWiki {{{
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'path_html': '~/public_html/'}]
+" }}}
+" {{{ Visual
+" Change cursor for insert mode
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+set background=dark
+colorscheme Tomorrow-Night
+
+" Don't redraw unnecessarily
+set lazyredraw
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·
+
 " }}}
 " vim:foldmethod=marker:foldlevel=0
