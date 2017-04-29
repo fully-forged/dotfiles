@@ -37,11 +37,12 @@ brew install \
   tmux \
   tree \
   python \
-  python3
+  python3 \
+  vim
 
 # Install Neovim Python support
 pip install --user --upgrade neovim
 pip3 install --user --upgrade neovim
 
 # Symlink dotfiles with GNU Stow
-stow nvim bash tmux input git bin emacs
+stow nvim vim bash tmux input git bin emacs
