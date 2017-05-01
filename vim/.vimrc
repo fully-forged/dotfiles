@@ -37,6 +37,7 @@ Plug 'edkolev/erlang-motions.vim', { 'for': 'erlang'}
 Plug 'dag/vim2hs', { 'for': 'haskell'}
 Plug 'bitc/vim-hdevtools', { 'for': 'haskell'}
 Plug 'w0rp/ale'
+Plug 'mhinz/vim-startify'
 
 call plug#end()
 
