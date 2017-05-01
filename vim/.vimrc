@@ -100,6 +100,10 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
 let g:airline#extensions#tabline#enabled = 1
+call airline#parts#define_function('ALE', 'ALEGetStatusLine')
+call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
+
+let g:airline_section_error = airline#section#create_right(['ALE'])
 let g:airline_theme='tomorrow'
 "}}}
 " {{{ Mouse, OS integration
@@ -157,6 +161,11 @@ autocmd BufRead,BufNewFile {*.txt,*.tex,*.md} set wrap linebreak nolist textwidt
 
 " Format elm code on save
 autocmd BufWritePost *.elm silent execute "!elm-format --yes %" | edit! | set filetype=elm | redraw!
+
+" Run Ale only on save
+let g:ale_lint_on_text_changed = 'never'
+" Don't run ale when entering a file
+let g:ale_lint_on_enter = 0
 " }}}
 " Shortcuts {{{
 
@@ -350,8 +359,12 @@ set lazyredraw
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
 
-" Always display ALE gutter
-let g:ale_sign_column_always = 1
+" Ale markers configuration
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+
+" Ale status line
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 
 " }}}
 " vim:foldmethod=marker:foldlevel=0
