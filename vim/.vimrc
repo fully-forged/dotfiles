@@ -30,6 +30,7 @@ Plug 'godlygeek/tabular'
 Plug 'rking/ag.vim'
 Plug 'slashmili/alchemist.vim', { 'for': 'elixir'}
 Plug 'nonsense/tomorrow-night-vim-theme'
+Plug 'tomasr/molokai'
 Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang'}
 Plug 'vim-erlang/vim-erlang-omnicomplete', { 'for': 'erlang'}
 Plug 'vim-erlang/vim-erlang-tags', { 'for': 'erlang'}
@@ -105,7 +106,7 @@ call airline#parts#define_function('ALE', 'ALEGetStatusLine')
 call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
 
 let g:airline_section_error = airline#section#create_right(['ALE'])
-let g:airline_theme='tomorrow'
+let g:airline_theme='molokai'
 "}}}
 " {{{ Mouse, OS integration
 " Fix backspace
@@ -349,7 +350,7 @@ let test#runners = {'erlang': ['CommonTest']}
 " {{{ Visual
 " Change cursor for insert mode
 set background=dark
-colorscheme Tomorrow-Night
+colorscheme molokai
 
 " Don't redraw unnecessarily
 set lazyredraw
