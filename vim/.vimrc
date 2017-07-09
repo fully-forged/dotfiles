@@ -21,6 +21,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'}
 Plug 'wolfy87/vim-enmasse'
 Plug 'ElmCast/elm-vim'
+Plug 'sjl/vitality.vim'
 Plug 'benmills/vimux'
 Plug 'janko-m/vim-test'
 Plug 'bling/vim-airline'
