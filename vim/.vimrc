@@ -159,9 +159,6 @@ autocmd BufRead,BufNewFile {*.md,*.mkd} setlocal spell
 " Soft wrap when writing docs
 autocmd BufRead,BufNewFile {*.txt,*.tex,*.md} set wrap linebreak nolist textwidth=0 wrapmargin=0
 
-" Format elm code on save
-autocmd BufWritePost *.elm silent execute "!elm-format --yes %" | edit! | set filetype=elm | redraw!
-
 " Run Ale only on save
 let g:ale_lint_on_text_changed = 'never'
 " Don't run ale when entering a file
