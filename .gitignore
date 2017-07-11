@@ -1,4 +1,7 @@
 /nvim/.config/nvim/bundle
 /nvim/.config/nvim/.netrwhist
+/nvim/.config/direnv
 /emacs/.emacs.d/*
 !/emacs/.emacs.d/init.el
+
+/bin/bin
