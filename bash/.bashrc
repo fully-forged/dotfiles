@@ -32,7 +32,7 @@ function tmuxify_command_prompt {
 }
 
 function configure_editor {
-  export EDITOR=/usr/local/bin/nvim
+  export EDITOR=/usr/local/bin/vim
 }
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
@@ -51,5 +51,3 @@ eval "$(direnv hook $0)"
 . /usr/local/opt/fzf/shell/key-bindings.bash
 
 export PATH=$HOME/bin:$PATH
-
-alias vim=nvim
