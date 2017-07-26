@@ -1,10 +1,7 @@
 " Plug {{{
 call plug#begin('~/.config/nvim/bundle')
 
-Plug 'shougo/deoplete.nvim'
-Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'junegunn/seoul256.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tmhedberg/matchit'
 Plug 'vim-scripts/tComment'
@@ -26,18 +23,11 @@ Plug 'wolfy87/vim-enmasse'
 Plug 'ElmCast/elm-vim'
 Plug 'benmills/vimux'
 Plug 'janko-m/vim-test'
-Plug 'embear/vim-localvimrc'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'geoffharcourt/one-dark.vim'
 Plug 'godlygeek/tabular'
 Plug 'rking/ag.vim'
 Plug 'slashmili/alchemist.vim', { 'for': 'elixir'}
-Plug 'powerman/vim-plugin-AnsiEsc'
-Plug 'morhetz/gruvbox'
-Plug 'tomasr/molokai'
-Plug 'Soares/base16.nvim'
-Plug 'dracula/vim'
 Plug 'nonsense/tomorrow-night-vim-theme'
 Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang'}
 Plug 'vim-erlang/vim-erlang-omnicomplete', { 'for': 'erlang'}
@@ -46,11 +36,8 @@ Plug 'vim-erlang/vim-erlang-skeletons', { 'for': 'erlang'}
 Plug 'edkolev/erlang-motions.vim', { 'for': 'erlang'}
 Plug 'dag/vim2hs', { 'for': 'haskell'}
 Plug 'bitc/vim-hdevtools', { 'for': 'haskell'}
-Plug 'neomake/neomake'
-Plug 'vimwiki/vimwiki'
-Plug 'jreybert/vimagit'
-Plug 'rust-lang/rust.vim', { 'for': 'rust'}
-Plug 'lfe-support/vim-lfe', { 'for': 'lfe'}
+Plug 'w0rp/ale'
+Plug 'mhinz/vim-startify'
 
 call plug#end()
 
@@ -113,6 +100,10 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
 let g:airline#extensions#tabline#enabled = 1
+call airline#parts#define_function('ALE', 'ALEGetStatusLine')
+call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
+
+let g:airline_section_error = airline#section#create_right(['ALE'])
 let g:airline_theme='tomorrow'
 "}}}
 " {{{ Mouse, OS integration
@@ -168,17 +159,10 @@ autocmd BufRead,BufNewFile {*.md,*.mkd} setlocal spell
 " Soft wrap when writing docs
 autocmd BufRead,BufNewFile {*.txt,*.tex,*.md} set wrap linebreak nolist textwidth=0 wrapmargin=0
 
-" Format elm code on save
-autocmd BufWritePost *.elm silent execute "!elm-format --yes %" | edit! | set filetype=elm | redraw!
-
-" Compile Haskell on save
-augroup NeomakeHaskell
-  autocmd!
-  autocmd! BufWritePost *.hs Neomake
-augroup END
-
-au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
-au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
+" Run Ale only on save
+let g:ale_lint_on_text_changed = 'never'
+" Don't run ale when entering a file
+let g:ale_lint_on_enter = 0
 " }}}
 " Shortcuts {{{
 
@@ -233,8 +217,8 @@ vmap <C-Right> >gv
 vmap <C-Left> <gv
 
 "tab navigation
-nmap <silent> <Left> :tabprevious<cr>
-nmap <silent> <Right> :tabnext<cr>
+nmap <silent> <Left> :bprevious<cr>
+nmap <silent> <Right> :bnext<cr>
 
 " Emmet
 let g:user_emmet_expandabbr_key = '<c-e>'
@@ -245,11 +229,6 @@ nmap <silent> <leader>3 :NERDTreeToggle<cr>
 " Remap CtrlP
 nmap <silent> <leader>1 :CtrlP<cr>
 
-" GitGutter
-nmap <silent> <leader>gn :GitGutterNextHunk<cr>
-nmap <silent> <leader>gp :GitGutterPrevHunk<cr>
-nmap <silent> <leader>gr :GitGutterPreviewHunk<cr>
-
 autocmd filetype clojure nmap <leader>e :Eval<cr>
 
 " Testing
@@ -258,6 +237,11 @@ nmap <silent> <leader>f :TestNearest<CR>
 nmap <silent> <leader>t :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
+
+" Terminal
+nmap <silent> <leader>h :split term://bash<CR>i
+nmap <silent> <leader>v :vsplit term://bash<CR>i
+tnoremap <Esc> <C-\><C-n>
 
 " Location navigation
 nmap <silent> <leader>n :lnext<cr>
@@ -273,7 +257,6 @@ nmap <leader>e :EnMasse<CR>
 " }}}
 " Autocompletion {{{
 set completeopt=longest,menuone
-let g:deoplete#enable_at_startup = 1
 let g:SuperTabDefaultCompletionType = "context"
 " }}}
 " Syntax - General {{{
@@ -363,61 +346,31 @@ let NERDTreeShowHidden=0
 let NERDTreeShowBookmarks=0
 let g:NERDTreeChDirMode=2
 " }}}
-" NeoMake {{{
-
-" Elm support
-let g:neomake_elm_elm_lint_maker = { 'exe': 'elm-lint', 'errorformat': '%f:%l:%c [%t] %m' }
-let g:neomake_elm_enabled_makers = ['elm_lint']
-
-function! neomake#makers#ft#erlang#erlc()
-    return {
-        \ 'args': ['+basic_validation'],
-        \ 'errorformat':
-            \ '%W%f:%l: Warning: %m,' .
-            \ '%E%f:%l: %m'
-        \ }
-endfunction
-" use neomake to build different files
-augroup neomake_neomake_build
-  autocmd! BufRead,BufWritePost *.elm Neomake elm_lint
-  autocmd! BufRead,BufWritePost *.c Neomake
-  autocmd! BufRead,BufWritePost *.erl Neomake
-augroup end
-
-" (Assuming settings like the following)
-let g:deoplete#omni#functions = {}
-let g:deoplete#sources = {}
-let g:deoplete#sources._ = ['file']
-let g:deoplete#omni#input_patterns = {}
-
-let g:deoplete#omni#functions.elm = ['elm#Complete']
-let g:deoplete#omni#input_patterns.elm = '[^ \t]+'
-let g:deoplete#sources.elm = ['omni'] + g:deoplete#sources._
-" }}}
 " Vim-Test {{{
 let test#filename_modifier = ':p'
 let test#runners = {'erlang': ['CommonTest']}
 " }}}
-" VimWiki {{{
-let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'path_html': '~/public_html/'}]
-" }}}
 " {{{ Visual
 " Change cursor for insert mode
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-if (has("termguicolors"))
-  set termguicolors
-endif
-
 set background=dark
 colorscheme Tomorrow-Night
+
+" Split right and below
+set splitright
+set splitbelow
 
 " Don't redraw unnecessarily
 set lazyredraw
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
+
+" Ale markers configuration
+let g:ale_sign_error = '⨉'
+let g:ale_sign_warning = '⚠'
+
+" Ale status line
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 
 " }}}
 " vim:foldmethod=marker:foldlevel=0
