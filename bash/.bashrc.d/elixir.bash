@@ -1,1 +1,1 @@
-alias iex='rlwrap -a foo iex'
+export ERL_AFLAGS="-kernel shell_history enabled"
