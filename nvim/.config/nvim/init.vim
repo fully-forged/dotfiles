@@ -385,5 +385,7 @@ let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 " }}}
 " {{{ Startify
 let g:startify_change_to_dir = 0
+let g:startify_list_order = ['dir', 'sessions']
+
 " }}}
 " vim:foldmethod=marker:foldlevel=0
