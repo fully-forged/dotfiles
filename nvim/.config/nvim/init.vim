@@ -11,6 +11,7 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-projectionist'
 Plug 'ervandew/supertab'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'mattn/emmet-vim'
@@ -34,6 +35,7 @@ Plug 'vim-erlang/vim-erlang-omnicomplete', { 'for': 'erlang'}
 Plug 'vim-erlang/vim-erlang-tags', { 'for': 'erlang'}
 Plug 'vim-erlang/vim-erlang-skeletons', { 'for': 'erlang'}
 Plug 'edkolev/erlang-motions.vim', { 'for': 'erlang'}
+Plug 'andyl/vim-projectionist-elixir', { 'for': 'elixir'}
 Plug 'dag/vim2hs', { 'for': 'haskell'}
 Plug 'bitc/vim-hdevtools', { 'for': 'haskell'}
 Plug 'w0rp/ale'
@@ -235,8 +237,11 @@ autocmd filetype clojure nmap <leader>e :Eval<cr>
 
 nmap <silent> <leader>f :TestNearest<CR>
 nmap <silent> <leader>t :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
+
+" Projections
+
+nmap <silent> <leader>a :A<CR>
 
 " Terminal
 nmap <silent> <leader>h :split term://bash<CR>i
