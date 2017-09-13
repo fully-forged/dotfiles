@@ -378,4 +378,7 @@ let g:ale_sign_warning = '⚠'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 
 " }}}
+" {{{ Startify
+let g:startify_change_to_dir = 0
+" }}}
 " vim:foldmethod=marker:foldlevel=0
