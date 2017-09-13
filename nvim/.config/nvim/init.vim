@@ -233,6 +233,11 @@ nmap <silent> <leader>1 :CtrlP<cr>
 
 autocmd filetype clojure nmap <leader>e :Eval<cr>
 
+" Rotate splits
+
+command VB :vert ball
+command B :ball
+
 " Testing
 
 nmap <silent> <leader>f :TestNearest<CR>
