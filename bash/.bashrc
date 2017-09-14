@@ -32,7 +32,7 @@ function tmuxify_command_prompt {
 }
 
 function configure_editor {
-  export EDITOR=/usr/local/bin/vim
+  export EDITOR=/usr/local/bin/nvim
 }
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
