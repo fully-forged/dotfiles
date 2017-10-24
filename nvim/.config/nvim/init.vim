@@ -20,7 +20,7 @@ Plug 'JulesWang/css.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'}
 Plug 'wolfy87/vim-enmasse'
-Plug 'ElmCast/elm-vim'
+Plug 'ElmCast/elm-vim', { 'for': 'elm'}
 Plug 'benmills/vimux'
 Plug 'janko-m/vim-test'
 Plug 'bling/vim-airline'
