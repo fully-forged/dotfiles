@@ -236,8 +236,8 @@ autocmd filetype clojure nmap <leader>e :Eval<cr>
 
 " Rotate splits
 
-command VB :vert ball
-command B :ball
+nmap <leader>vb :vert ball<CR>
+nmap <leader>hb :ball<CR>
 
 " Testing
 
