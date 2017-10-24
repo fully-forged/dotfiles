@@ -44,8 +44,7 @@ tmuxify_command_prompt
 
 eval "$(direnv hook $0)"
 
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex" && source $HOME/.kerl/20.1/activate && source $HOME/.kiex/elixirs/elixir-master.env
 
 . /usr/local/opt/fzf/shell/completion.bash
 . /usr/local/opt/fzf/shell/key-bindings.bash
