@@ -51,3 +51,5 @@ eval "$(direnv hook $0)"
 . /usr/local/opt/fzf/shell/key-bindings.bash
 
 export PATH=$HOME/bin:$PATH
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

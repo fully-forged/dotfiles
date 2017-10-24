@@ -1,7 +1,6 @@
 " Plug {{{
 call plug#begin('~/.config/nvim/bundle')
 
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tmhedberg/matchit'
 Plug 'vim-scripts/tComment'
@@ -27,7 +26,7 @@ Plug 'janko-m/vim-test'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'godlygeek/tabular'
-Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 Plug 'slashmili/alchemist.vim', { 'for': 'elixir'}
 Plug 'nonsense/tomorrow-night-vim-theme'
 Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang'}
@@ -40,6 +39,8 @@ Plug 'dag/vim2hs', { 'for': 'haskell'}
 Plug 'bitc/vim-hdevtools', { 'for': 'haskell'}
 Plug 'w0rp/ale'
 Plug 'mhinz/vim-startify'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -228,8 +229,8 @@ let g:user_emmet_expandabbr_key = '<c-e>'
 " Remap NerdTree
 nmap <silent> <leader>3 :NERDTreeToggle<cr>
 
-" Remap CtrlP
-nmap <silent> <leader>1 :CtrlP<cr>
+" Remap FZF
+nmap <silent> <leader>1 :FZF<cr>
 
 autocmd filetype clojure nmap <leader>e :Eval<cr>
 
@@ -333,23 +334,17 @@ if exists('$TMUX')
 endif
 "
 " }}}
-" CtrlP {{{
-let g:ctrlp_working_path_mode = 2
+" FZF {{{
 set wildignore+=*/.hg/*,*/.svn/*,*/vendor/cache/*,*/public/system/*,*/tmp/*,*/log/*,*/.git/*,*/.jhw-cache/*,*/solr/data/*,*/node_modules/*,*/.DS_Store
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_extensions = ['tag']
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-" See discussion at: https://github.com/thoughtbot/dotfiles/commit/f854c8d8ef08ab0f80639e0219f9800f0246fb90
-if executable('ag')
+" Use Ripgrep for search
+if executable('rg')
+  " Use Ack with rg
+  let g:ackprg = 'rg --vimgrep --ignore-case'
+
   " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  set grepprg=rg\ --vimgrep\ --ignore-case
 endif
-
-
 " }}}
 " NERDTree {{{
 let NERDTreeShowHidden=0
