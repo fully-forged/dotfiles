@@ -29,6 +29,7 @@ brew install \
   openssl \
   postgresql \
   reattach-to-user-namespace \
+  ripgrep \
   rlwrap \
   sassc \
   ssh-copy-id \
