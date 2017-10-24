@@ -297,7 +297,7 @@ nnoremap va/ F/v,
 au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,Vagrantfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 " }}}
 " Syntax - Erlang/Elixir {{{
-let g:alchemist#elixir_erlang_src = "~/oss"
+" let g:alchemist#elixir_erlang_src = "~/oss"
 " }}}
 " Tmux {{{
 "Key fixes for Tmux
