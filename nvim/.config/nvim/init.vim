@@ -41,6 +41,8 @@ Plug 'w0rp/ale'
 Plug 'mhinz/vim-startify'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'mhartington/oceanic-next'
+Plug 'lambdalisue/gina.vim'
 
 call plug#end()
 
@@ -104,10 +106,12 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 let g:airline#extensions#tabline#enabled = 1
 call airline#parts#define_function('ALE', 'ALEGetStatusLine')
+call airline#parts#define_function('GinaBranch', 'gina#component#repo#branch')
 call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
 
 let g:airline_section_error = airline#section#create_right(['ALE'])
-let g:airline_theme='tomorrow'
+let g:airline_section_b = airline#section#create_left(['GinaBranch'])
+let g:airline_theme='oceanicnext'
 "}}}
 " {{{ Mouse, OS integration
 " Fix backspace
@@ -250,8 +254,8 @@ nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>a :A<CR>
 
 " Terminal
-nmap <silent> <leader>h :split term://bash<CR>i
-nmap <silent> <leader>v :vsplit term://bash<CR>i
+nmap <silent> <leader>h :botright 30split  term://bash<CR>i
+nmap <silent> <leader>v :botright 120vsplit term://bash<CR>i
 tnoremap <Esc> <C-\><C-n>
 
 " Location navigation
@@ -311,6 +315,8 @@ let VimuxHeight = "30"
 let VimuxOrientation = "v"
 let VimuxUseNearestPane = 1
 
+let g:test#strategy = 'neovim'
+
 if exists('$TMUX')
   let g:test#strategy = 'vimux'
 
@@ -356,9 +362,15 @@ let test#filename_modifier = ':p'
 let test#runners = {'erlang': ['CommonTest']}
 " }}}
 " {{{ Visual
+if (has("termguicolors"))
+  set termguicolors
+endif
+
 " Change cursor for insert mode
-set background=dark
-colorscheme Tomorrow-Night
+" set background=dark
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext
 
 " Split right and below
 set splitright
@@ -377,6 +389,9 @@ let g:ale_sign_warning = '⚠'
 " Ale status line
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 
+" NeoVim cursor
+highlight! link TermCursor Cursor
+highlight! TermCursorNC guibg=cc6666 guifg=white ctermbg=1 ctermfg=15
 " }}}
 " {{{ Startify
 let g:startify_change_to_dir = 0
