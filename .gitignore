@@ -5,3 +5,4 @@
 !/emacs/.emacs.d/init.el
 
 /bin/bin
+nvim/.config/configstore/update-notifier-npm.json
