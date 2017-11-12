@@ -37,6 +37,8 @@ Plug 'edkolev/erlang-motions.vim', { 'for': 'erlang'}
 Plug 'andyl/vim-projectionist-elixir', { 'for': 'elixir'}
 Plug 'dag/vim2hs', { 'for': 'haskell'}
 Plug 'bitc/vim-hdevtools', { 'for': 'haskell'}
+Plug 'purescript-contrib/purescript-vim'
+Plug 'frigoeu/psc-ide-vim'
 Plug 'w0rp/ale'
 Plug 'mhinz/vim-startify'
 Plug '/usr/local/opt/fzf'
