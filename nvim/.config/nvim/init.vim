@@ -264,6 +264,9 @@ nmap <silent> <leader>h :botright 30split  term://bash<CR>i
 nmap <silent> <leader>v :botright 120vsplit term://bash<CR>i
 tnoremap <Esc> <C-\><C-n>
 
+" Switch buffers via FZF
+nmap <silent> <leader>s :Buffers<CR>
+
 " Location navigation
 nmap <silent> <leader>n :lnext<cr>
 
