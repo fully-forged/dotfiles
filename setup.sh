@@ -45,5 +45,7 @@ brew install \
 pip install --user --upgrade neovim
 pip3 install --user --upgrade neovim
 
+mkdir -p ~/.nvim/undodir
+
 # Symlink dotfiles with GNU Stow
 stow nvim vim bash tmux input git bin emacs
