@@ -392,10 +392,6 @@ let NERDTreeShowHidden=0
 let NERDTreeShowBookmarks=0
 let g:NERDTreeChDirMode=2
 " }}}
-" Vim-Test {{{
-let test#filename_modifier = ':p'
-let test#runners = {'erlang': ['CommonTest']}
-" }}}
 " {{{ Visual
 if (has("termguicolors"))
   let base16colorspace=256
