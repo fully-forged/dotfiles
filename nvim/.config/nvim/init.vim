@@ -37,10 +37,8 @@ Plug 'vim-erlang/vim-erlang-skeletons', { 'for': 'erlang'}
 Plug 'edkolev/erlang-motions.vim', { 'for': 'erlang'}
 Plug 'andyl/vim-projectionist-elixir', { 'for': 'elixir'}
 Plug 'dag/vim2hs', { 'for': 'haskell'}
-Plug 'bitc/vim-hdevtools', { 'for': 'haskell'}
 Plug 'purescript-contrib/purescript-vim'
 Plug 'frigoeu/psc-ide-vim'
-Plug 'w0rp/ale'
 Plug 'mhinz/vim-startify'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -177,16 +175,15 @@ au FocusLost * :silent! wall
 autocmd FileType gitcommit setlocal spell textwidth=72
 autocmd BufRead,BufNewFile {*.md,*.mkd} setlocal spell
 
+" Format haskell
+autocmd BufWritePost *.hs silent :!stack exec hfmt -- -w %
+
 " Soft wrap when writing docs
 autocmd BufRead,BufNewFile {*.txt,*.tex,*.md} set wrap linebreak nolist textwidth=0 wrapmargin=0
 
 " Format Elixir code on save
 let g:mix_format_on_save = 1
 
-" Run Ale only on save
-let g:ale_lint_on_text_changed = 'never'
-" Don't run ale when entering a file
-let g:ale_lint_on_enter = 0
 " }}}
 " Shortcuts {{{
 
@@ -417,13 +414,6 @@ set lazyredraw
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
-
-" Ale markers configuration
-let g:ale_sign_error = '⨉'
-let g:ale_sign_warning = '⚠'
-
-" Ale status line
-let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 
 " NeoVim cursor
 highlight! link TermCursor Cursor
