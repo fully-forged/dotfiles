@@ -47,6 +47,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'jlesquembre/base16-neovim'
 Plug 'lambdalisue/gina.vim'
+Plug 'neomake/neomake'
+Plug 'mhinz/vim-mix-format'
 
 call plug#end()
 
@@ -144,6 +146,9 @@ let Tlist_Ctags_Cmd = "/usr/local/bin/ctags -R --exclude=.git --exclude=log -f .
 set tags+=.tags
 " }}}
 " Autocommands {{{
+
+call neomake#configure#automake('w')
+
 augroup vimrcEx
   au!
 
@@ -174,6 +179,9 @@ autocmd BufRead,BufNewFile {*.md,*.mkd} setlocal spell
 
 " Soft wrap when writing docs
 autocmd BufRead,BufNewFile {*.txt,*.tex,*.md} set wrap linebreak nolist textwidth=0 wrapmargin=0
+
+" Format Elixir code on save
+let g:mix_format_on_save = 1
 
 " Run Ale only on save
 let g:ale_lint_on_text_changed = 'never'
