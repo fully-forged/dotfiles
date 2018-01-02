@@ -68,6 +68,7 @@ set history=50
 set ruler
 set showcmd
 set incsearch
+set inccommand=nosplit
 set laststatus=2
 set t_Co=256
 set modeline
