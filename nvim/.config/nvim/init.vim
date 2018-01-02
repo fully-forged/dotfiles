@@ -45,6 +45,7 @@ Plug 'mhinz/vim-startify'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mhartington/oceanic-next'
+Plug 'jlesquembre/base16-neovim'
 Plug 'lambdalisue/gina.vim'
 
 call plug#end()
@@ -119,7 +120,7 @@ call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
 
 let g:airline_section_error = airline#section#create_right(['ALE'])
 let g:airline_section_b = airline#section#create_left(['GinaBranch'])
-let g:airline_theme='oceanicnext'
+let g:airline_theme='base16_tomorrow'
 "}}}
 " {{{ Mouse, OS integration
 " Fix backspace
@@ -201,11 +202,28 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-" map ctrl-hjkl for easy window movement
-map <c-h> <c-w>h
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
+" Meta keys movement
+
+" Terminal mode:
+tnoremap <M-h> <c-\><c-n><c-w>h
+tnoremap <M-j> <c-\><c-n><c-w>j
+tnoremap <M-k> <c-\><c-n><c-w>k
+tnoremap <M-l> <c-\><c-n><c-w>l
+" Insert mode:
+inoremap <M-h> <Esc><c-w>h
+inoremap <M-j> <Esc><c-w>j
+inoremap <M-k> <Esc><c-w>k
+inoremap <M-l> <Esc><c-w>l
+" Visual mode:
+vnoremap <M-h> <Esc><c-w>h
+vnoremap <M-j> <Esc><c-w>j
+vnoremap <M-k> <Esc><c-w>k
+vnoremap <M-l> <Esc><c-w>l
+" Normal mode:
+nnoremap <M-h> <c-w>h
+nnoremap <M-j> <c-w>j
+nnoremap <M-k> <c-w>k
+nnoremap <M-l> <c-w>l
 
 " Faster shortcut for commenting. Requires T-Comment plugin
 map <leader>c <c-_><c-_>
@@ -232,8 +250,8 @@ vmap <C-Right> >gv
 vmap <C-Left> <gv
 
 "tab navigation
-nmap <silent> <Left> :bprevious<cr>
-nmap <silent> <Right> :bnext<cr>
+nmap <silent> <Left> :tabprevious<cr>
+nmap <silent> <Right> :tabnext<cr>
 
 " Emmet
 let g:user_emmet_expandabbr_key = '<c-e>'
@@ -374,14 +392,13 @@ let test#runners = {'erlang': ['CommonTest']}
 " }}}
 " {{{ Visual
 if (has("termguicolors"))
+  let base16colorspace=256
   set termguicolors
 endif
 
 " Change cursor for insert mode
-" set background=dark
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
+set background=dark
+colorscheme base16-tomorrow-night
 
 " Split right and below
 set splitright
