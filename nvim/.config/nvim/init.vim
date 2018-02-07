@@ -61,6 +61,7 @@ filetype plugin indent on
 " PlugInstall
 " }}}
 " {{{ Defaults
+set cursorline
 set nobackup
 set nowritebackup
 set notimeout
@@ -79,11 +80,12 @@ set autoread
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set foldmethod=indent
+set foldmethod=syntax
 set foldlevelstart=99
+set ignorecase
+set smartcase
 syntax on
 set number
-" set numberwidth=2
 
 let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
@@ -124,7 +126,7 @@ call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
 
 let g:airline_section_error = airline#section#create_right(['ALE'])
 let g:airline_section_b = airline#section#create_left(['GinaBranch'])
-let g:airline_theme='base16_tomorrow'
+let g:airline_theme='base16_monokai'
 "}}}
 " {{{ Mouse, OS integration
 " Fix backspace
@@ -403,7 +405,7 @@ endif
 
 " Change cursor for insert mode
 set background=dark
-colorscheme base16-tomorrow-night
+colorscheme base16-gruvbox-dark-hard
 
 " Split right and below
 set splitright
