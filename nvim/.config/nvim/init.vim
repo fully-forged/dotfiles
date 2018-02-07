@@ -1,7 +1,7 @@
 " Plug {{{
 call plug#begin('~/.config/nvim/bundle')
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-vinegar'
 Plug 'tmhedberg/matchit'
 Plug 'vim-scripts/tComment'
 Plug 'tpope/vim-abolish'
@@ -262,13 +262,8 @@ nmap <silent> <Right> :tabnext<cr>
 " Emmet
 let g:user_emmet_expandabbr_key = '<c-e>'
 
-" Remap NerdTree
-nmap <silent> <leader>3 :NERDTreeToggle<cr>
-
 " Remap FZF
 nmap <silent> <leader>1 :FZF<cr>
-
-autocmd filetype clojure nmap <leader>e :Eval<cr>
 
 " Rotate splits
 
@@ -289,6 +284,8 @@ nmap <silent> <leader>a :A<CR>
 nmap <silent> <leader>h :botright 30split  term://bash<CR>i
 nmap <silent> <leader>v :botright 120vsplit term://bash<CR>i
 tnoremap <Esc> <C-\><C-n>
+
+nmap <silent> <leader>3 :Lex<CR>
 
 " Switch buffers via FZF
 nmap <silent> <leader>s :Buffers<CR>
@@ -387,10 +384,7 @@ if executable('rg')
   set grepprg=rg\ --vimgrep\ --ignore-case
 endif
 " }}}
-" NERDTree {{{
-let NERDTreeShowHidden=0
-let NERDTreeShowBookmarks=0
-let g:NERDTreeChDirMode=2
+" File explorer {{{
 " }}}
 " {{{ Visual
 if (has("termguicolors"))
