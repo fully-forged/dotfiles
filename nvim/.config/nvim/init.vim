@@ -47,6 +47,9 @@ Plug 'jlesquembre/base16-neovim'
 Plug 'lambdalisue/gina.vim'
 Plug 'neomake/neomake'
 Plug 'mhinz/vim-mix-format'
+Plug 'tpope/vim-fireplace'
+Plug 'markwoodhall/vim-figwheel'
+Plug 'bhurlow/vim-parinfer'
 
 call plug#end()
 
