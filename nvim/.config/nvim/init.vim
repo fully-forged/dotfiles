@@ -16,7 +16,7 @@ Plug 'ervandew/supertab'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'mattn/emmet-vim'
 Plug 'vim-ruby/vim-ruby'
-Plug 'elixir-lang/vim-elixir'
+Plug 'elixir-editors/vim-elixir'
 Plug 'JulesWang/css.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'}
@@ -184,6 +184,12 @@ autocmd BufRead,BufNewFile {*.txt,*.tex,*.md} set wrap linebreak nolist textwidt
 
 " Format Elixir code on save
 let g:mix_format_on_save = 1
+
+" Only display a warning when formatting fails due to compile errors
+let g:mix_format_silent_errors = 1
+
+" Use static formatter path
+let g:mix_format_elixir_bin_path = '~/.kiex/elixirs/elixir-1.6.0/bin'
 
 " }}}
 " Shortcuts {{{
