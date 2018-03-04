@@ -202,7 +202,7 @@ let g:mix_format_on_save = 1
 let g:mix_format_silent_errors = 1
 
 " Use static formatter path
-let g:mix_format_elixir_bin_path = '~/.kiex/elixirs/elixir-1.6.0/bin'
+let g:mix_format_elixir_bin_path = '~/.kiex/elixirs/elixir-1.6.2/bin'
 
 " }}}
 " Shortcuts {{{
