@@ -91,6 +91,8 @@ let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 set undodir=~/.nvim/undodir
+
+set diffopt=filler,context:0
 " }}}
 " {{{ Spellcheck
 set spelllang=en
