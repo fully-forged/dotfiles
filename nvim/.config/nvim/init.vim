@@ -340,6 +340,8 @@ nnoremap ya/ F/y,
 nnoremap vi/ T/v,
 nnoremap va/ F/v,
 
+au BufRead,BufNewFile {.envrc} set ft=sh
+
 " }}}
 " Syntax - Ruby {{{
 " Fixes syntax highlight for Ruby files
