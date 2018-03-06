@@ -8,6 +8,8 @@ set -x FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 
 set -x MEMENTO_BASE_URL 'https://memento.fullyforged.com'
 
+set -x ERL_AFLAGS '-kernel shell_history enabled'
+
 source ~/.kiex/scripts/kiex.fish
 source $HOME/.kiex/elixirs/.elixir-1.6.1.env.fish
 
