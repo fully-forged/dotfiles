@@ -44,6 +44,8 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'jlesquembre/base16-neovim'
+Plug 'fenetikm/falcon'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'lambdalisue/gina.vim'
 Plug 'neomake/neomake'
 Plug 'mhinz/vim-mix-format'
@@ -409,7 +411,7 @@ endif
 
 " Change cursor for insert mode
 set background=dark
-colorscheme base16-gruvbox-dark-hard
+colorscheme dracula
 
 " Split right and below
 set splitright
