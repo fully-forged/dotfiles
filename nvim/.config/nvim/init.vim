@@ -411,7 +411,7 @@ endif
 
 " Change cursor for insert mode
 set background=dark
-colorscheme dracula
+colorscheme base16-gruvbox-dark-medium
 
 " Split right and below
 set splitright
