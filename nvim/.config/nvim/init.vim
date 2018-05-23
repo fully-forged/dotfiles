@@ -1,7 +1,7 @@
 " Plug {{{
 call plug#begin('~/.config/nvim/bundle')
 
-Plug 'tpope/vim-vinegar'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tmhedberg/matchit'
 Plug 'vim-scripts/tComment'
 Plug 'tpope/vim-abolish'
