@@ -7,6 +7,8 @@
 	email = claudio.ortolina@erlang-solutions.com
 [mergetool]
   keepBackup = true
+[commit]
+  verbose = true
 [color]
   branch = auto
   interactive = auto
