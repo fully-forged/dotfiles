@@ -39,14 +39,10 @@ Plug 'andyl/vim-projectionist-elixir', { 'for': 'elixir'}
 Plug 'dag/vim2hs', { 'for': 'haskell'}
 Plug 'alx741/vim-hindent', { 'for': 'haskell'}
 Plug 'parsonsmatt/intero-neovim', { 'for': 'haskell'}
-Plug 'purescript-contrib/purescript-vim'
-Plug 'frigoeu/psc-ide-vim'
 Plug 'mhinz/vim-startify'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'mhartington/oceanic-next'
 Plug 'jlesquembre/base16-neovim'
-Plug 'fenetikm/falcon'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'lambdalisue/gina.vim'
 Plug 'neomake/neomake'
