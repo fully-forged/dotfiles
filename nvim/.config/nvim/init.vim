@@ -301,7 +301,7 @@ nmap <silent> <leader>h :botright 30split  term://bash<CR>i
 nmap <silent> <leader>v :botright 120vsplit term://bash<CR>i
 tnoremap <Esc> <C-\><C-n>
 
-nmap <silent> <leader>3 :Lex<CR>
+nmap <silent> <leader>3 :NERDTreeToggle<cr>
 
 " Switch buffers via FZF
 nmap <silent> <leader>s :Buffers<CR>
@@ -449,6 +449,9 @@ if executable('rg')
 endif
 " }}}
 " File explorer {{{
+let NERDTreeShowHidden=0
+let NERDTreeShowBookmarks=0
+let g:NERDTreeChDirMode=2
 " }}}
 " {{{ Visual
 if (has("termguicolors"))
