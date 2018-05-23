@@ -50,11 +50,11 @@ Plug 'fenetikm/falcon'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'lambdalisue/gina.vim'
 Plug 'neomake/neomake'
-Plug 'mhinz/vim-mix-format'
-Plug 'tpope/vim-fireplace'
-Plug 'markwoodhall/vim-figwheel'
-Plug 'bhurlow/vim-parinfer'
-Plug 'rust-lang/rust.vim'
+Plug 'mhinz/vim-mix-format', {'for': 'elixir'}
+Plug 'tpope/vim-fireplace', {'for': 'clojure'}
+Plug 'markwoodhall/vim-figwheel', {'for': 'clojure'}
+Plug 'bhurlow/vim-parinfer', {'for': 'clojure'}
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
 
 call plug#end()
 
