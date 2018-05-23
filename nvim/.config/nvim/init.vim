@@ -51,6 +51,7 @@ Plug 'tpope/vim-fireplace', {'for': 'clojure'}
 Plug 'markwoodhall/vim-figwheel', {'for': 'clojure'}
 Plug 'bhurlow/vim-parinfer', {'for': 'clojure'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'Erichain/vim-monokai-pro'
 
 call plug#end()
 
