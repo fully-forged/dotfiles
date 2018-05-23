@@ -51,6 +51,7 @@ Plug 'tpope/vim-fireplace', {'for': 'clojure'}
 Plug 'markwoodhall/vim-figwheel', {'for': 'clojure'}
 Plug 'bhurlow/vim-parinfer', {'for': 'clojure'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Erichain/vim-monokai-pro'
 
 call plug#end()
@@ -318,6 +319,7 @@ nnoremap <leader>b :center 80<cr>hhv0r#A<space><esc>40A#<esc>d80<bar>YppVr#kk.
 nmap <leader>e :EnMasse<CR>
 " }}}
 " Autocompletion {{{
+let g:deoplete#enable_at_startup = 1
 set completeopt=longest,menuone
 let g:SuperTabDefaultCompletionType = "context"
 " }}}
