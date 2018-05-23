@@ -1,3 +1,10 @@
 #!/bin/sh
 
-ifconfig en0 | grep 'inet ' | cut -d ' ' -f 2
+ETH_IP=$(ifconfig en4 | grep 'inet ' | cut -d ' ' -f 2)
+WIFI_IP=$(ifconfig en0 | grep 'inet ' | cut -d ' ' -f 2)
+
+if [[ $ETH_IP ]]; then
+  echo "[E] $ETH_IP"
+else
+  echo "[W] $WIFI_IP"
+fi
