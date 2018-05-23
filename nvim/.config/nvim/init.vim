@@ -461,7 +461,7 @@ endif
 
 " Change cursor for insert mode
 set background=dark
-colorscheme base16-gruvbox-dark-medium
+colorscheme monokai_pro
 
 " Split right and below
 set splitright
