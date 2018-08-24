@@ -53,6 +53,9 @@ Plug 'bhurlow/vim-parinfer', {'for': 'clojure'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Erichain/vim-monokai-pro'
+Plug 'zyedidia/literate.vim'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'tpope/vim-dispatch'
 
 call plug#end()
 
@@ -297,8 +300,8 @@ nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>a :A<CR>
 
 " Terminal
-nmap <silent> <leader>h :botright 30split  term://bash<CR>i
-nmap <silent> <leader>v :botright 120vsplit term://bash<CR>i
+nmap <silent> <leader>h :botright 30split  term://fish<CR>i
+nmap <silent> <leader>v :botright 120vsplit term://fish<CR>i
 tnoremap <Esc> <C-\><C-n>
 
 nmap <silent> <leader>3 :NERDTreeToggle<cr>
@@ -411,6 +414,7 @@ let VimuxHeight = "30"
 let VimuxOrientation = "v"
 let VimuxUseNearestPane = 1
 
+let g:asyncrun_open = 10
 let g:test#strategy = 'neovim'
 
 if exists('$TMUX')
@@ -461,7 +465,7 @@ endif
 
 " Change cursor for insert mode
 set background=dark
-colorscheme monokai_pro
+colorscheme base16-gruvbox-dark-hard
 
 " Split right and below
 set splitright
