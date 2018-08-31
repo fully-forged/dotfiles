@@ -93,7 +93,7 @@ set smartcase
 syntax on
 set number
 
-let g:python_host_prog = '/usr/local/bin/python2'
+let g:python_host_prog = '/usr/local/opt/python@2/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 set undodir=~/.nvim/undodir
